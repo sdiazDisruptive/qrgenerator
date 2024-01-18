@@ -1,0 +1,158 @@
+:root{
+  --content-width: 1080px;
+  --radious: 4px;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: rgb(253,253,253);
+}
+
+.content-wrap{
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.title{
+  font-size: 1.75rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  color: rgb(68, 67, 77);
+}
+
+.form{
+  --cols: 1;
+  display: grid;
+  grid-template-columns: repeat(var(--cols), 1fr);
+  gap: 1rem;
+
+  padding: 1.25rem;
+  border-radius: var(--radious);
+  background-color: rgb(250,250,250);
+  border: 1px solid rgb(210,210,210);
+}
+
+.form-title{
+  font-size:1.5rem;
+  font-weight: 600;
+  color: rgb(110,110,110);
+}
+
+.label{
+  display: block;
+  font-size: 0.8rem;
+  margin-bottom: 0.2rem;
+  font-weight: 500;
+}
+
+.field{
+  padding:0.5rem;
+  border-radius: var(--radious);
+  border: 1px solid rgb(160,160,160);
+  background-color: #fff;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.button{
+  color: #fff;
+  background-color: rgb(52, 143, 233);
+  border: none;
+  border-radius: var(--radious);
+  padding: 0.75rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.1s linear;
+  display: block;
+  text-decoration: none;
+}
+
+.button:hover{
+  background-color: rgb(79, 160, 242);
+}
+
+.form-button{
+  width: 50%;
+  min-width: 130px;
+  margin: 0 auto;
+}
+
+.results{
+  --res-cols: 1;
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.result-wrap{
+  filter: drop-shadow(0 0 10px rgba(0,0,0,0.15));
+  padding: 1.5rem;
+  border-radius: var(--radious);
+  background-color: rgb(250,250,250);
+  display: grid;
+  grid-template-columns: repeat(var(--res-cols), 1fr);
+  gap: 1.5rem;
+}
+
+.result-img{
+  text-align: center;
+}
+
+.result-canvas{
+  width: 100%;
+  max-width: var(--img-w);
+}
+
+.result-info{
+  text-align: center;
+}
+
+.result-p{
+  padding: 0.2rem 0;
+}
+
+.mb-1{
+  margin-bottom: 1rem;
+}
+
+.mt-1{
+  margin-top: 1rem;
+}
+
+@media only screen and (min-width: 560px){
+  .form{
+    --cols: 2;
+  }
+  .cols-span{
+    grid-column: span var(--cols);
+  }
+}
+
+@media only screen and (min-width: 1080px){
+  .form{
+    --cols: 4;
+  }
+  .cols-span{
+    grid-column: span var(--cols);
+  }
+  .results{
+    --res-cols: 2;
+  }
+  .result-info{
+    text-align: left;
+  }
+  .download-btn{
+    display: inline-block;
+  }
+}

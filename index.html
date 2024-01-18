@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generador de QR</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="content-wrap">
+    <h1 class="title">Generador de QR</h1>
+    <section>
+      <form action="" id="qr-settings" class="form">
+        <h2 class="form-title cols-span">Configuraciones del código QR</h2>
+        <div>
+          <label for="qr-padding" class="label">Padding (px)</label>
+          <input type="number" name="qr-padding" id="qr-padding" min="0" value="25" class="field" required>
+        </div>
+
+        <div>
+          <label for="qr-size" class="label">Tamaño (px)</label>
+          <input type="number" name="qr-size" id="qr-size" min="0" value="600" class="field" required>
+        </div>
+
+        <div>
+          <label for="qr-url" class="label">URL</label>
+          <input type="text" name="qr-url" id="qr-url" class="field" required>
+        </div>
+
+        <div>
+          <label for="qr-level" class="label">Nivel</label>
+          <select name="level" id="qr-level" class="field" required>
+            <option value="H">H</option>
+            <option value="Q">Q</option>
+            <option value="M">M</option>
+            <option value="L" selected>L</option>
+          </select>
+        </div>
+
+        <div class="cols-span">
+          <button type="submit" id="qr-submit" class="button form-button">Generar</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="results" class="results">
+      <!-- <canvas id="qr-result" class="result-img"></canvas> -->
+      <!-- <a href="" id="download" class="button">Descargar</a> -->
+    </section>
+  </div>
+
+  <script src="qrious.min.js"></script>
+  <script src="canvas2image.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
